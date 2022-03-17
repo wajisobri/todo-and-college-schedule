@@ -8,7 +8,8 @@
 }
 
 .body {
-  background: var(--c-light);
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
   font: 14px 'Nunito', sans-serif;
 }
 
@@ -300,15 +301,13 @@ a:hover {
   margin: 2em;
   padding: 1em;
   box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
-  background-image: url('https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background:rgba(255,255,255,0.3);
 }
 
 .schedule h1 {
   text-align: center;
   font-weight: bold;
-  color: var(--c-light);
+  color: var(--c-dark);
 }
 
 .schedule h1 span {
