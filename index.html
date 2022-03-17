@@ -1,0 +1,90 @@
+<html>
+   <head>
+      <title>New Tab</title>
+      <meta name="viewport" content="height=device-height, initial-scale=1, user-scalable=no">
+      <meta name="description" content="Always Do - Todo List on New Tab" />
+      <link href="css/font.css" rel="stylesheet">
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/reset.min.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/animate.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <div class="logo">
+         <img src="images/icon.svg" alt="Todo List Icon">
+      </div>
+      <body class="body">
+         <div class="container">
+            <div class="today"></div>
+            <div class="quotes"></div>
+            <div class="row">
+               <div class="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
+                  <div class="add-control">
+                     <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="✍️ Add your task here..." />
+                        <i class="fa fa-plus form-control-feedback add-btn" title="Add your task here"></i>
+                     </div>
+                  </div>
+                  <p class="err text-danger text-center hidden">
+                     <i class="fa fa-warning"></i> Oops! Please, enter name item
+                  </p>
+                  <p class="no-items text-muted text-center hidden">
+                     <i class="fa fa-ban"></i>
+                  </p>
+                  <ul class="todo-list"></ul>
+                  <button type="button" class="button-todo" id="button-todo">Remove All Todo</button>
+               </div>
+            </div>
+         </div>
+         <div class="schedule">
+            <h1>College <span>Schedule</span></h1>
+   
+            <div class="list">
+               <div class="column">
+                  <div class="monday">MONDAY</div>
+                  <div class="row" id="monday-schedule"></div>
+               </div>
+               <div class="column">
+                  <div class="tuesday">Tuesday</div>
+                  <div class="row" id="tuesday-schedule"></div>
+               </div>
+               <div class="column">
+                  <div class="wednesday">Wednesday</div>
+                  <div class="row" id="wednesday-schedule"></div>
+               </div>
+               <div class="column">
+                  <div class="thursday">Thursday</div>
+                  <div class="row" id="thursday-schedule"></div>
+               </div>
+               <div class="column">
+                  <div class="friday">Friday</div>
+                  <div class="row" id="friday-schedule"></div>
+               </div>
+            </div>
+            <button type="button" class="button-schedule" id="button-schedule">Remove All Schedule</button>
+         </div>
+
+         <div class="input-schedule">
+            <h3>Input College Schedule</h3>
+            <form>
+               <input type="text" id="input-title" class="form-input" placeholder="Add college schedule title here..." />
+               <input type="text" id="input-time" class="form-input" placeholder="Add college schedule time here..." />
+               <select id="input-day">
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+               </select>
+               <button type="button" id="input-submit">Add</button>
+            </form>
+         </div>
+
+         <script src="js/jquery.min.js"></script>
+         <script src="js/jquery-ui.min.js"></script>
+         <script src="js/index.js"></script>
+         <script src="js/scrollreveal.min.js"></script>
+      </body>
+   </body>

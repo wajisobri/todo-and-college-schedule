@@ -1,0 +1,17 @@
+{
+  "name": "Always Do - Todo List on New Tab",
+  "description": "New Tab page is your own to-do list",
+  "version": "1.0",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {"128": "images/icon.png" },
+  "manifest_version": 3,
+  "permissions":[
+    "storage",
+    "notifications",
+    "contextMenus"
+  ]
+}
+

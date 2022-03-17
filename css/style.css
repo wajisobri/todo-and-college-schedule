@@ -1,0 +1,491 @@
+:root {
+  --c-gray: #8d959b;
+  --c-light: #f9f9f9;
+  --c-dark: #404060;
+  --c-red: #e96575;
+  --c-blue: #4b96f0;
+  --c-todo: rgb(85, 41, 220);
+}
+
+.body {
+  background: var(--c-light);
+  font: 14px 'Nunito', sans-serif;
+}
+
+.today {
+  font-size: 22px;
+  text-align: center;
+  color: #020631;
+}
+
+.animated.bounceIn,
+.animated.bounceOut,
+.animated.flipOutX,
+.animated.flipOutY {
+  font-size: 13px;
+}
+
+.container {
+  padding-top: 75px;
+}
+
+.todo-list {
+  margin: 20px 0;
+}
+
+.todo-list li {
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  position: relative;
+  word-break: break-word;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.todo-list li.danger {
+  background: var(--c-todo);
+}
+
+.todo-list li.danger label {
+  text-decoration: line-through;
+  color: #fff;
+}
+
+.todo-list li.danger label .checkbox-mask {
+  border-color: transparent;
+}
+
+.todo-list li.danger label .checkbox-mask:after {
+  content: '\f00c';
+  font-family: 'FontAwesome';
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: 0;
+}
+
+.todo-list li .checkbox {
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.todo-list li label {
+  display: block;
+  padding-right: 10px;
+}
+
+.todo-list li label input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.todo-list li label .checkbox-mask {
+  display: block;
+  border: 2px solid #666;
+  width: 12px;
+  height: 12px;
+  border-radius: 2.5px;
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px;
+}
+
+.todo-list li .close {
+  display: none;
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  top: 50%;
+  margin-top: -8px;
+  right: 10px;
+  font-size: 16px;
+}
+
+.todo-list li .close .fa {
+  line-height: 16px;
+}
+
+.todo-list li:hover .close {
+  display: block;
+}
+
+.has-feedback .fa {
+  line-height: 35px;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+  display: block;
+  color: #666;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.has-feedback .fa:hover {
+  color: #999;
+}
+
+.add-control {
+  margin-top: 20px;
+  position: relative;
+}
+
+.add-control .form-control {
+  padding-right: 25px;
+}
+
+.add-control .refresh {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  font-size: 14px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  margin-right: -10px;
+  cursor: pointer;
+  color: #9da1af;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.add-control .refresh:hover {
+  color: #666;
+}
+
+.form-control,
+.form-control:focus,
+.form-control:active,
+.form-control:active:focus {
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+}
+
+.form-control {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.animated {
+  -webkit-animation-duration: 0.45s;
+  animation-duration: 0.45s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.fast {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+}
+
+.zero {
+  top: 8px;
+  right: 0;
+  font-size: 14px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  margin-right: -10px;
+  cursor: pointer;
+  color: #9da1af;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+/* Base Classes */
+button {
+  font-size: 16px;
+  color: #ffffff;
+  background: #fff0;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  outline: none;
+  border-color: #FFF;
+  border-radius: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button[disabled] {
+  color: var(--c-gray) !important;
+  background: #fff !important;
+}
+
+p {
+  margin: 15px 0 10px;
+  font-size: 46px;
+  font-weight: 700;
+  color: #FFF;
+}
+
+
+.fa-ban:before {
+  content: "\f05e";
+  color: #8c8c8c;
+  font-size: 29px;
+}
+
+
+.logo {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -50px;
+}
+
+
+.h4,
+h4 {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+
+a:focus,
+a:hover {
+  color: #fbfbfb;
+  text-decoration: none;
+}
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+  content: "\f00d";
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .col-xs-offset-3 {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-xs-6 {
+    width: 80%;
+  }
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: 1150PX;
+  }
+}
+
+@media (max-width: 680px) {
+  svg {
+    width: 70px;
+    height: 70px;
+
+  }
+}
+
+.todo-list input[type="checkbox"] {
+  opacity: 0;
+}
+
+.schedule {
+  margin: 2em;
+  padding: 1em;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
+  background-image: url('https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.schedule h1 {
+  text-align: center;
+  font-weight: bold;
+  color: var(--c-light);
+}
+
+.schedule h1 span {
+  color: var(--c-red);
+}
+
+.schedule .list {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 50px;
+}
+
+.schedule .list .column .monday {
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
+  padding: 0.5em;
+  background-color: #F6C345;
+  color: var(--c-light);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.schedule .list .column .tuesday {
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
+  padding: 0.5em;
+  background-color: #E13E63;
+  color: var(--c-light);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.schedule .list .column .wednesday {
+  padding: 0.5em;
+  background-color: #01A0B1;
+  color: var(--c-light);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.schedule .list .column .thursday {
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
+  padding: 0.5em;
+  background-color: #EE843E;
+  color: var(--c-light);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.schedule .list .column .friday {
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
+  padding: 0.5em;
+  background-color: #A54C98;
+  color: var(--c-light);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.schedule .list .column .row {
+  margin: auto;
+}
+
+.schedule .list .column .row .card {
+  padding: 0.5em;
+  text-align: center;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.2);
+  margin-top: 1em;
+  background-color: var(--c-light);
+  color: var(--c-dark);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+.schedule .list .column .row .card .time {
+  color: #F6C345;
+  font-size: medium;
+}
+
+.input-schedule h3 {
+  font-weight: bold;
+  text-align: center;
+  margin: 1em auto;
+}
+
+.input-schedule form {
+  width: 20%;
+  margin: auto;
+}
+
+.input-schedule form .form-input {
+  padding-right: 25px;
+  margin-bottom: 0.5em;
+}
+
+.input-schedule form button {
+  width: 30%;
+  background-color: var(--c-todo);
+  color: var(--c-light)
+}
+
+.form-input,
+.form-input:focus,
+.form-input:active,
+.form-input:active:focus {
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+}
+
+.form-input {
+  width: 300px;
+  margin: auto;
+  display: inline-block;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.form-input:focus {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+	size: 20px;
+	height: 20px;
+  width: 20px;
+  position: relative;
+	box-sizing: border-box;
+	line-height: 20px;
+	display: inline-block;
+  border-radius: 20px;
+}
+
+.close-button:before,
+.close-button:after
+{
+  width: 12px;
+  height: 2px;
+  transform: rotate(-45deg);
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  margin-top: -2/2;
+  margin-left: -12/2;
+  display: block;
+  height: 2px;
+  width: 12px;
+  background-color: var(--c-dark);
+}
+
+.close-button:after {
+  transform: rotate(45deg);
+}
+
+.button-todo {
+  width: 50%;
+  font-weight: bold;
+  background-color: var(--c-todo);
+}
+
+.button-schedule {
+  margin: 2em auto;
+  width: 100%;
+  font-weight: bold;
+  background-color: var(--c-dark);
+}
