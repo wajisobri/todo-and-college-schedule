@@ -278,7 +278,7 @@ $(document).ready(function() {
       printSchedule("Monday")
       printSchedule("Tuesday")
       printSchedule("Wednesday")
-      printSchedule("Tuesday")
+      printSchedule("Thursday")
       printSchedule("Friday")
       $(document).on("click", "a.close-button" , function() {
         let idSchedule = $(this).parent().attr('id');
