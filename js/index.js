@@ -34,6 +34,11 @@ const removeState = () => {
   state = []
 }
 
+const removeOwner = () => {
+  chrome.storage.sync.remove(["owner"]);
+  owner = ''
+}
+
 const removeSchedule = () => {
   chrome.storage.sync.remove(["schedule"]);
   schedule = []
