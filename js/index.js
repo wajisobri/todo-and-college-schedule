@@ -64,7 +64,7 @@ const printSchedule = (day) => {
   let el = document.getElementById(day.toLowerCase() + '-schedule')
   el.innerHTML = ''
   filterSchedule.forEach((s) => {
-    toIn = `<div class="card" id="${s.id}"><a href="#" class="close-button"></a><div class="time">${s.time}</div><div class="title">${s.title}</div></div>`
+    toIn = `<div class="card" id="${s.id}"><a class="close-button"></a><div class="time">${s.time}</div><div class="title">${s.title}</div></div>`
     el.innerHTML += toIn
   })
 }

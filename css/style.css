@@ -452,6 +452,7 @@ a:hover {
 	line-height: 20px;
 	display: inline-block;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .close-button:before,
