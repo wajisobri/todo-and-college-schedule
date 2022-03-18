@@ -1,5 +1,6 @@
 let state = [];
 let schedule = [];
+let owner
 
 const generateID = () => {
   let randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
@@ -56,6 +57,15 @@ const addSchedule = (title, time, day) => {
   schedule.push(scheduleObj);
   chrome.storage.sync.set({"schedule": JSON.stringify(schedule)})
   printSchedule(day)
+}
+
+const setOwner = (name) => {
+  let ownerObj = {
+    name
+  }
+  owner = ownerObj
+  chrome.storage.sync.set({"owner": JSON.stringify(owner)})
+  location.reload()
 }
 
 const printSchedule = (day) => {
@@ -286,6 +296,51 @@ $(document).ready(function() {
         schedule.splice(itemIndex, 1);
         chrome.storage.sync.set({"schedule": JSON.stringify(schedule)})
         $(this).parent().remove();
+      });
+    }
+  });
+
+  let nowTime = new Date()
+  let nowSec = nowTime.getSeconds()
+  let nowMinute = nowTime.getMinutes()
+  let transTo = (nowMinute + nowSec) % 60
+  if(transTo < nowMinute) {
+    nowMinute += (nowMinute - transTo) % 60
+  } else {
+    nowMinute -= (transTo - nowMinute) % 60
+  }
+  let nowHour = (nowTime.getHours() - nowSec / 5) + (nowSec / 3600)
+
+  $(".clock").get(0).style.setProperty("--setTimeHour", nowHour);
+  $(".clock").get(0).style.setProperty("--setTimeMinute", nowMinute);
+  $(".clock").get(0).style.setProperty("--setTimeSecond", nowSec);
+
+  chrome.storage.sync.get(['owner'], (res) => {
+    let greet
+    if(nowHour >= 5 && nowHour <= 12) {
+      greet = "Morning"
+    } else if(nowHour >= 13 && nowHour <= 18) {
+      greet = "Afternoon"
+    } else if(nowHour >= 19 && nowHour <= 23) {
+      greet = "Evening"
+    } else if(nowHour >= 0 && nowHour <= 4) {
+      greet = "Night"
+    }
+
+    if(res.owner != undefined && res.owner.length > 0) {
+      owner = JSON.parse(res.owner)
+      $(".greeting").append("Good " + greet + ", " + owner.name)
+    } else {
+      $(".greeting").append(`
+        <div class="form-group has-feedback">
+            <input type="text" id="owner" class="form-control input-owner" placeholder="Enter Your Name Here..." />
+        </div>
+        <button type="button" class="button-owner" id="button-owner">Submit</button>
+        <hr />
+      `)
+
+      $("#button-owner").on("click", function() {
+        setOwner($('#owner').val())
       });
     }
   });
