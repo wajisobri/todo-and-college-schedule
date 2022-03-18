@@ -317,13 +317,14 @@ $(document).ready(function() {
 
   chrome.storage.sync.get(['owner'], (res) => {
     let greet
-    if(nowHour >= 5 && nowHour <= 12) {
+    hour = nowTime.getHours()
+    if(hour >= 5 && hour <= 12) {
       greet = "Morning"
-    } else if(nowHour >= 13 && nowHour <= 18) {
+    } else if(hour >= 13 && hour <= 18) {
       greet = "Afternoon"
-    } else if(nowHour >= 19 && nowHour <= 23) {
+    } else if(hour >= 19 && hour <= 23) {
       greet = "Evening"
-    } else if(nowHour >= 0 && nowHour <= 4) {
+    } else if(hour >= 0 && hour <= 4) {
       greet = "Night"
     }
 
