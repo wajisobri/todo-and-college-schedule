@@ -306,19 +306,11 @@ $(document).ready(function() {
   });
 
   let nowTime = new Date()
-  let nowSec = nowTime.getSeconds()
   let nowMinute = nowTime.getMinutes()
-  let transTo = (nowMinute + nowSec) % 60
-  if(transTo < nowMinute) {
-    nowMinute += (nowMinute - transTo) % 60
-  } else {
-    nowMinute -= (transTo - nowMinute) % 60
-  }
-  let nowHour = (nowTime.getHours() - nowSec / 5) + (nowSec / 3600)
+  let nowHour = nowTime.getHours()
 
   $(".clock").get(0).style.setProperty("--setTimeHour", nowHour);
   $(".clock").get(0).style.setProperty("--setTimeMinute", nowMinute);
-  $(".clock").get(0).style.setProperty("--setTimeSecond", nowSec);
 
   chrome.storage.sync.get(['owner'], (res) => {
     let greet

@@ -535,9 +535,8 @@ main {
 }
 
 .clock {
-  --setTimeSecond: 15;
   --setTimeHour: 14;
-  --setTimeMinute: 10;
+  --setTimeMinute: 01;
   --timeShiftHour: calc(var(--setTimeHour) * var(--hour));
   --timeShiftMinute: calc(var(--setTimeMinute) * var(--minute));
   width: 150px;
@@ -546,7 +545,7 @@ main {
   background-color: var(--grey);
   margin: 0 auto;
   position: relative;
-  transform: rotate(calc((180 + var(--setTimeSecond) * 6) * 1deg));
+  transform: rotate(180deg);
 }
 
 .hand {
